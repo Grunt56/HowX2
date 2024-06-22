@@ -1,0 +1,84 @@
+body{
+    background-color: gray;
+}
+
+.sheet-root{
+    background-color: white;
+    max-width: 80vw;
+    margin: 50px auto auto;
+    padding: 40px 50px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 20px;
+}
+
+.row.gap {
+    margin-top: 80px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.form-label{
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.form-input{
+    height: 20px;
+}
+
+.form-textarea{
+    resize: none;
+    height: 500px;
+    width: 300px;
+}
+
+.atributos-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.atributo{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.atributo label{
+    width: 81px;
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.atributo input{
+    max-width: 50px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.skill-container{
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+
+}
+
