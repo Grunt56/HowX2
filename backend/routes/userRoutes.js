@@ -84,12 +84,19 @@ router.post("/cadastro", async function (req, res) {
     const user = req.body;
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(user.senha, salt);
+    const dbUser = await db.collection("usuarios").findOne({
+      usuario: user.usuario,
+    });
+
+    if (dbUser) {
+      return res.status(400).json({ error: "Usuário já existe" });
+    }
     const createdUser = {
       usuario: user.usuario,
       senha: hash,
     };
     const result = await db.collection("usuarios").insertOne(createdUser);
-    res.json(result);
+    return res.json(result);
   } catch (error) {
     res.status(500).json({ error: "Erro interno do servidor" });
   }
@@ -98,7 +105,11 @@ router.post("/cadastro", async function (req, res) {
 // Login dos clientes
 router.post(
   "/login",
-  passport.authenticate("local"),
+  passport.authenticate("local", {
+    failureFlash: true,
+    //successRedirect: "/fichas",
+    //failureRedirect: "/index",
+  }),
   async function (req, res) {
     try {
       res.json(req.user);

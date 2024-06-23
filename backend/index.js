@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const cors = require("cors");
+const flash = require("connect-flash");
 const passport = require("passport");
 const app = express();
 const port = 3000;
@@ -16,6 +17,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
