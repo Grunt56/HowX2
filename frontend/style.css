@@ -1,9 +1,53 @@
 body{
-    background-color: darkgray;
+    background-color: rgb(63, 14, 14);
 }
+
+.header {
+    border-bottom: 1px solid #ccc;
+    padding: 25px 15px;
+    background-color: rgb(63, 14, 14);
+}
+
+.header a {
+    color: white;
+}
+
+nav {
+    display:flex;
+}
+
+.container {
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+}
+
+.navbar-brand {
+    font-size: 34px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin: 0;
+}
+
+.navbar-nav li a {
+    text-decoration: none;
+    font-size: 20px;
+} 
 
 .form{
     width: 400px;
+    justify-content: center;
+    align-items: center;
     margin: auto;
     padding-top: 40px;
 }
@@ -13,7 +57,7 @@ body{
     box-shadow: 1px 1px 5px white;
     background-color: white;
     padding: 30px;
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 
 .card-top{
@@ -27,6 +71,7 @@ body{
 .card-group > label{
     width: 100%;
     display: block;
+    color: rgb(128, 7, 7);
 }
 
 .card-group > input{
@@ -39,8 +84,9 @@ body{
 
 
 .card-group > button{
-    background-color: blue;
+    background-color: red;
     width: 100%;
+    margin-top: 20px;
     border-radius: 30px;
     padding: 15px;
     color: white;
@@ -50,8 +96,10 @@ body{
 
 
 .btn button:hover{
-    background-image: linear-gradient(to right, blue, black);
+    background-image: linear-gradient(to right, red, black);
 }
 .title{
-    color: blue;
+    color: rgb(128, 7, 7);
 }
+
+

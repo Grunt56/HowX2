@@ -7,164 +7,212 @@
     <link rel="stylesheet" href="5e.css" />
   </head>
   <body>
+    <button type="button" class="btn-logout">Logout</button>
     <div class="sheet-root">
-      <div class="row">
-        <div class="form-control">
-          <label for="name" class="form-label"> Nome: </label>
-          <input type="text" id="name" class="form-input" />
-        </div>
-        <div class="form-control">
-          <label for="classe" class="form-label"> Classe: </label>
-          <input type="text" id="classe" class="form-input" />
-        </div>
-        <div class="form-control">
-          <label for="raca" class="form-label"> Raça: </label>
-          <input type="text" id="raca" class="form-input" />
-        </div>
-        <div class="form-control">
-          <label for="alinhamento" class="form-label"> Alinhamento: </label>
-          <input type="text" id="alinhamento" class="form-input" />
-        </div>
-        <div class="form-control">
-          <label for="origem" class="form-label"> Origem: </label>
-          <input type="text" id="origem" class="form-input" />
-        </div>
-        <div class="form-control">
-          <label for="exp" class="form-label"> Exp: </label>
-          <input type="text" id="exp" class="form-input" />
-        </div>
-        <div class="form-control">
-          <label for="pontos-vida" class="form-label"> Pontos de vida: </label>
-          <input type="text" id="pontos-vida" class="form-input" />
-        </div>
-        <div class="form-control">
-          <label for="armadura" class="form-label"> CA: </label>
-          <input type="text" id="armadura" class="form-input" />
-        </div>
-        <div class="form-control">
-          <label for="iniciativa" class="form-label"> Iniciativa: </label>
-          <input type="text" id="iniciativa" class="form-input" />
-        </div>
-      </div>
-      <div class="row gap">
-        <div class="column">
-          <h2>Atributos</h2>
-          <div class="atributos-list">
-            <div class="atributo">
-              <label for="forca">Força:</label>
-              <input type="number" id="forca" />
-            </div>
-            <div class="atributo">
-              <label for="destreza">Destreza:</label>
-              <input type="number" id="destreza" />
-            </div>
-            <div class="atributo">
-              <label for="constituicao">Constituição:</label>
-              <input type="number" id="constituicao" />
-            </div>
-            <div class="atributo">
-              <label for="inteligencia">Inteligência:</label>
-              <input type="number" id="inteligencia" />
-            </div>
-            <div class="atributo">
-              <label for="sabedoria">Sabedoria:</label>
-              <input type="number" id="sabedoria" />
-            </div>
-            <div class="atributo">
-              <label for="carisma">Carisma:</label>
-              <input type="number" id="carisma" />
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <h2>Perícias</h2>
-          <div class="skill-container">
-            <div class="atributos-list">
-              <div class="atributo">
-                <label for="atletismo">Atletismo:</label>
-                <input type="number" id="atletismo" />
-              </div>
-              <div class="atributo">
-                <label for="acrobacia">Acrobacia:</label>
-                <input type="number" id="acrobacia" />
-              </div>
-              <div class="atributo">
-                <label for="arcanismo">Arcanismo:</label>
-                <input type="number" id="arcanismo" />
-              </div>
-              <div class="atributo">
-                <label for="atuacao">Atuação:</label>
-                <input type="number" id="atuacao" />
-              </div>
-              <div class="atributo">
-                <label for="blefar">Blefar:</label>
-                <input type="number" id="blefar" />
-              </div>
-
-              <div class="atributo">
-                <label for="religiao">Religião:</label>
-                <input type="number" id="religiao" />
-              </div>
-              <div class="atributo">
-                <label for="sobrevivencia">Sobrevivência:</label>
-                <input type="number" id="sobrevivencia" />
-              </div>
-            </div>
-            <div class="atributos-list">
-              <div class="atributo">
-                <label for="furtividade">Furtividade:</label>
-                <input type="number" id="furtividade" />
-              </div>
-              <div class="atributo">
-                <label for="historia">História:</label>
-                <input type="number" id="historia" />
-              </div>
-              <div class="atributo">
-                <label for="intimidacao">Intimidação:</label>
-                <input type="number" id="intimidacao" />
-              </div>
-              <div class="atributo">
-                <label for="intuicao">Intuição:</label>
-                <input type="number" id="intuicao" />
-              </div>
-              <div class="atributo">
-                <label for="investigacao">Investigação:</label>
-                <input type="number" id="investigacao" />
-              </div>
-            </div>
-            <div class="atributos-list">
-              <div class="atributo">
-                <label for="medicina">Medicina:</label>
-                <input type="number" id="medicina" />
-              </div>
-              <div class="atributo">
-                <label for="natureza">Natureza:</label>
-                <input type="number" id="natureza" />
-              </div>
-              <div class="atributo">
-                <label for="percepcao">Percepção:</label>
-                <input type="number" id="percepcao" />
-              </div>
-              <div class="atributo">
-                <label for="persuacao">Persuação:</label>
-                <input type="number" id="persuacao" />
-              </div>
-              <div class="atributo">
-                <label for="prestidigitacao">Prestidigitação:</label>
-                <input type="number" id="prestidigitacao" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column">
+      <form id="ficha-form">
+        <button type="submit" class="btn-salvar">Salvar</button>
+        <div class="row">
           <div class="form-control">
-            <label for="caracteristicas" class="form-label"
-              >Características e Habilidades</label
-            >
-            <textarea id="caracteristicas" class="form-textarea"></textarea>
+            <label for="name" class="form-label"> Nome: </label>
+            <input type="text" id="name" class="form-input" name="nome" />
+          </div>
+          <div class="form-control">
+            <label for="classe" class="form-label"> Classe: </label>
+            <input type="text" id="classe" class="form-input" name="classe" />
+          </div>
+          <div class="form-control">
+            <label for="raca" class="form-label"> Raça: </label>
+            <input type="text" id="raca" class="form-input" name="raca" />
+          </div>
+          <div class="form-control">
+            <label for="alinhamento" class="form-label"> Alinhamento: </label>
+            <input
+              type="text"
+              id="alinhamento"
+              class="form-input"
+              name="alinhamento"
+            />
+          </div>
+          <div class="form-control">
+            <label for="origem" class="form-label"> Origem: </label>
+            <input type="text" id="origem" class="form-input" name="origem" />
+          </div>
+          <div class="form-control">
+            <label for="exp" class="form-label"> Exp: </label>
+            <input type="text" id="exp" class="form-input" name="exp" />
+          </div>
+          <div class="form-control">
+            <label for="pontos-vida" class="form-label">
+              Pontos de vida:
+            </label>
+            <input
+              type="text"
+              id="pontos-vida"
+              class="form-input"
+              name="pontos_vida"
+            />
+          </div>
+          <div class="form-control">
+            <label for="armadura" class="form-label"> CA: </label>
+            <input
+              type="text"
+              id="armadura"
+              class="form-input"
+              name="armadura"
+            />
+          </div>
+          <div class="form-control">
+            <label for="iniciativa" class="form-label"> Iniciativa: </label>
+            <input
+              type="text"
+              id="iniciativa"
+              class="form-input"
+              name="iniciativa"
+            />
+          </div>
+          <div class="form-control">
+            <label for="proficiencia" class="form-label"> Proficiência: </label>
+            <input
+              type="text"
+              id="proficiencia"
+              class="form-input"
+              name="proficiencia"
+            />
           </div>
         </div>
-      </div>
+        <div class="row gap">
+          <div class="column">
+            <h2>Atributos</h2>
+            <div class="atributos-list">
+              <div class="atributo">
+                <label for="forca">Força:</label>
+                <input type="number" id="forca" name="forca" />
+              </div>
+              <div class="atributo">
+                <label for="destreza">Destreza:</label>
+                <input type="number" id="destreza" name="destreza" />
+              </div>
+              <div class="atributo">
+                <label for="constituicao">Constituição:</label>
+                <input type="number" id="constituicao" name="constituicao" />
+              </div>
+              <div class="atributo">
+                <label for="inteligencia">Inteligência:</label>
+                <input type="number" id="inteligencia" name="inteligencia" />
+              </div>
+              <div class="atributo">
+                <label for="sabedoria">Sabedoria:</label>
+                <input type="number" id="sabedoria" name="sabedoria" />
+              </div>
+              <div class="atributo">
+                <label for="carisma">Carisma:</label>
+                <input type="number" id="carisma" name="carisma" />
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <h2>Perícias</h2>
+            <div class="skill-container">
+              <div class="atributos-list">
+                <div class="atributo">
+                  <label for="atletismo">Atletismo:</label>
+                  <input type="number" id="atletismo" name="atletismo" />
+                </div>
+                <div class="atributo">
+                  <label for="acrobacia">Acrobacia:</label>
+                  <input type="number" id="acrobacia" name="acrobacia" />
+                </div>
+                <div class="atributo">
+                  <label for="arcanismo">Arcanismo:</label>
+                  <input type="number" id="arcanismo" name="arcanismo" />
+                </div>
+                <div class="atributo">
+                  <label for="atuacao">Atuação:</label>
+                  <input type="number" id="atuacao" name="atuacao" />
+                </div>
+                <div class="atributo">
+                  <label for="blefar">Blefar:</label>
+                  <input type="number" id="blefar" name="blefar" />
+                </div>
+
+                <div class="atributo">
+                  <label for="religiao">Religião:</label>
+                  <input type="number" id="religiao" name="religiao" />
+                </div>
+                <div class="atributo">
+                  <label for="sobrevivencia">Sobrevivência:</label>
+                  <input
+                    type="number"
+                    id="sobrevivencia"
+                    name="sobrevivencia"
+                  />
+                </div>
+              </div>
+              <div class="atributos-list">
+                <div class="atributo">
+                  <label for="furtividade">Furtividade:</label>
+                  <input type="number" id="furtividade" name="furtividade" />
+                </div>
+                <div class="atributo">
+                  <label for="historia">História:</label>
+                  <input type="number" id="historia" name="historia" />
+                </div>
+                <div class="atributo">
+                  <label for="intimidacao">Intimidação:</label>
+                  <input type="number" id="intimidacao" name="intimidacao" />
+                </div>
+                <div class="atributo">
+                  <label for="intuicao">Intuição:</label>
+                  <input type="number" id="intuicao" name="intuicao" />
+                </div>
+                <div class="atributo">
+                  <label for="investigacao">Investigação:</label>
+                  <input type="number" id="investigacao" name="investigacao" />
+                </div>
+              </div>
+              <div class="atributos-list">
+                <div class="atributo">
+                  <label for="medicina">Medicina:</label>
+                  <input type="number" id="medicina" name="medicina" />
+                </div>
+                <div class="atributo">
+                  <label for="natureza">Natureza:</label>
+                  <input type="number" id="natureza" name="natureza" />
+                </div>
+                <div class="atributo">
+                  <label for="percepcao">Percepção:</label>
+                  <input type="number" id="percepcao" name="percepcao" />
+                </div>
+                <div class="atributo">
+                  <label for="persuacao">Persuação:</label>
+                  <input type="number" id="persuacao" name="persuacao" />
+                </div>
+                <div class="atributo">
+                  <label for="prestidigitacao">Prestidigitação:</label>
+                  <input
+                    type="number"
+                    id="prestidigitacao"
+                    name="prestidigitacao"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="form-control">
+              <label for="caracteristicas" class="form-label"
+                >Características e Habilidades</label
+              >
+              <textarea
+                id="caracteristicas"
+                class="form-textarea"
+                name="caracteristicas"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>

@@ -5,7 +5,7 @@ body{
 .sheet-root{
     background-color: white;
     max-width: 80vw;
-    margin: 50px auto auto;
+    margin: 35px auto auto;
     padding: 40px 50px;
 }
 
@@ -80,5 +80,26 @@ body{
     column-gap: 20px;
     flex-wrap: wrap;
 
+}
+
+.btn-salvar{
+    border: 0;
+    background-color: #0d6efd;
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+    float: right;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.btn-logout{
+    border: 0;
+    background-color: #0d6efd;
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
 }
 

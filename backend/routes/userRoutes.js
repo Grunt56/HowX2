@@ -13,13 +13,6 @@ const client = new MongoClient(url, {
   useUnifiedTopology: true,
 });
 
-function isLoggedIn(req, res, done) {
-  if (req.user) {
-    return done();
-  }
-  return false;
-}
-
 passport.use(
   new LocalStrategy(
     {
@@ -46,7 +39,7 @@ passport.use(
 );
 
 passport.serializeUser(function (user, done) {
-  done(null, user._id);
+  done(null, user._id.toString());
 });
 
 passport.deserializeUser(async function (id, done) {
@@ -94,6 +87,7 @@ router.post("/cadastro", async function (req, res) {
     const createdUser = {
       usuario: user.usuario,
       senha: hash,
+      ficha: null,
     };
     const result = await db.collection("usuarios").insertOne(createdUser);
     return res.json(result);
@@ -119,10 +113,6 @@ router.post(
   }
 );
 
-router.get("/isLoggedIn", isLoggedIn, function (req, res) {
-  res.json("login");
-});
-
 // Pegar informações de um usuário em especifico
 router.get("/:id", async function (req, res) {
   try {
@@ -132,6 +122,30 @@ router.get("/:id", async function (req, res) {
       .findOne({ _id: new ObjectId(id) });
     if (user) {
       res.json(user);
+    } else {
+      res.status(404).json({ error: "Usuario não encontrado" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Erro interno do servidor" });
+  }
+});
+
+router.post("/:id/ficha", async function (req, res) {
+  try {
+    const ficha = req.body;
+    const id = req.params.id;
+    const user = await db
+      .collection("usuarios")
+      .findOne({ _id: new ObjectId(id) });
+    if (user) {
+      const updatedUser = await db.collection("usuarios").updateOne(
+        { _id: new ObjectId(id) },
+        {
+          $set: { ficha },
+        }
+      );
+      res.status(200).json(updatedUser);
     } else {
       res.status(404).json({ error: "Usuario não encontrado" });
     }

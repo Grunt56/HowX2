@@ -15,6 +15,9 @@ app.use(
     secret: "54321",
     resave: false,
     saveUninitialized: false,
+    cookie: {
+      secure: true,
+    },
   })
 );
 app.use(flash());
