@@ -10,10 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (clientId) {
     if (url.includes("index") || url.includes("cadastro")) {
       window.location.href = "5e.html";
+      return;
     }
   } else {
     if (url.includes("5e")) {
       window.location.href = "index.html";
+      return;
     }
   }
 
@@ -23,6 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "index.html";
     });
   }
+
+  fetch(`http://localhost:3000/usuarios/${clientId}`)
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      const ficha = data.ficha;
+      for (let value in ficha) {
+        fichaForm.elements[value].value = ficha[value];
+      }
+    });
 
   if (cadastroForm) {
     cadastroForm.addEventListener("submit", function (event) {
@@ -189,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(function (data) {
           // Mostrando mensagem de sucesso
-          console.log(data);
+          alert("Ficha atualizada");
         });
     });
   }
